@@ -1,0 +1,186 @@
+/* =====================================================
+   1. إعدادات الخطوط والمتغيرات للألوان والنسق
+   - استيراد خط Cairo من Google Fonts بالأوزان 300، 500، 700
+   - :root لتخزين الألوان والمتغيرات لسهولة إعادة الاستخدام
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&display=swap');
+:root {
+    --body-bg: #f0f4f8; /* خلفية الصفحة: رمادي فاتح */
+    --article-bg: #ffffff; /* خلفية المقال: أبيض */
+    --text-color: #2c3e50; /* لون النص الأساسي: رمادي-أزرق */
+    --light-text-color: #7f8c8d; /* نص ثانوي */
+    --primary-color: #34495e; /* H1 */
+    --secondary-color: #1abc9c; /* H2 */
+    --accent-color: #e67e22; /* تمييز/روابط */
+    --quote-bg: #f8f9fa; /* خلفية اقتباسات */
+    --code-bg: #eceff1; /* خلفية الأكواد */
+    --shadow-color: rgba(0, 0, 0, 0.05); /* ظل خفيف */
+}
+
+/* الوضع الليلي */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg: #0d1117; /* خلفية داكنة */
+        --article-bg: #161b22; /* خلفية المقال الداكنة */
+        --text-color: #c9d1d9; /* نص فاتح */
+        --light-text-color: #8b949e; /* نص ثانوي فاتح */
+        --primary-color: #58a6ff; /* H1 */
+        --secondary-color: #48d2bc; /* H2 */
+        --accent-color: #f0833a; /* تمييز */
+        --quote-bg: #21262d; /* اقتباسات */
+        --code-bg: #1e2431; /* الأكواد */
+        --shadow-color: rgba(0, 0, 0, 0.7); /* ظل داكن */
+    }
+}
+
+/* =====================================================
+   2. إعدادات أساسية للصفحة (Body)
+   - font-family، حجم الخط، اتجاه النص، الهوامش، padding، ألوان
+===================================================== */
+body {
+    font-family: 'Cairo', sans-serif; /* خط النصوص */
+    direction: rtl; /* من اليمين لليسار */
+    text-align: right; /* محاذاة النص لليمين */
+    font-size: 17px; /* حجم النص */
+    line-height: 1.8; /* ارتفاع السطر */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشو الافتراضي */
+    color: var(--text-color); /* لون النص */
+    background-color: var(--body-bg); /* خلفية الصفحة */
+    transition: background-color 0.4s, color 0.4s; /* تغيير سلس للألوان */
+}
+
+/* =====================================================
+   3. العناوين H1, H2, H3
+   - margin-top: المسافة العلوية
+   - margin-bottom: المسافة السفلية
+   - padding-bottom: حشو داخلي أسفل النص
+===================================================== */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0; /* إزالة الفراغ العلوي */
+    margin-bottom: 25px; /* فراغ أسفل H1 */
+    padding-bottom: 15px; /* حشو داخلي أسفل النص */
+    border-bottom: 1px solid var(--light-text-color); /* خط أسفل العنوان */
+    opacity: 0.85; /* شفافية بسيطة */
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-top: 40px; /* فراغ علوي لفصل الأقسام */
+    margin-bottom: 15px; /* فراغ أسفل H2 */
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-top: 25px; /* فراغ علوي */
+    margin-bottom: 10px; /* فراغ سفلي */
+    padding-right: 15px; /* مساحة للنقطة الجانبية */
+    position: relative; /* لتثبيت النقطة ::before */
+}
+
+h3::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    right: 0; /* أقصى اليمين */
+    top: 0; /* محاذاة مع النص */
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* =====================================================
+   4. الحاوية الرئيسية للمقال
+===================================================== */
+.article-container {
+    max-width: 800px; /* أقصى عرض */
+    margin: 50px auto; /* هوامش علوية/سفلية + توسيط أفقي */
+    padding: 40px; /* حشو داخلي */
+    background-color: var(--article-bg);
+    border-radius: 15px; /* زوايا مستديرة */
+    box-shadow: 0 10px 30px var(--shadow-color); /* ظل ناعم */
+}
+
+/* =====================================================
+   5. الفقرات والقوائم
+===================================================== */
+p {
+    margin-top: 0; /* إزالة الفراغ العلوي */
+    margin-bottom: 1.8rem; /* فراغ أسفل الفقرة */
+    font-weight: 300; /* وزن خفيف */
+    line-height: 1.8; /* ارتفاع السطر */
+}
+
+ul, ol {
+    margin-top: 0; /* إزالة الفراغ العلوي */
+    margin-bottom: 2rem; /* فراغ أسفل القائمة */
+    padding-right: 30px; /* مسافة لليمين لضمان ظهور العلامات */
+}
+
+/* =====================================================
+   6. الاقتباسات Blockquote
+===================================================== */
+blockquote {
+    border-right: 4px solid var(--secondary-color); /* خط جانبي */
+    margin: 25px 0; /* فراغ علوي وسفلي */
+    padding: 15px 25px; /* حشو داخلي */
+    background-color: var(--quote-bg); /* خلفية */
+    font-style: italic; /* مائل */
+    color: var(--light-text-color); /* لون النص */
+    border-radius: 8px; /* زوايا مستديرة */
+    line-height: 1.6; /* ارتفاع السطر */
+}
+
+/* =====================================================
+   7. النصوص البرمجية Code
+===================================================== */
+code {
+    background-color: var(--code-bg); /* خلفية */
+    padding: 3px 6px; /* حشو داخلي */
+    border-radius: 6px; /* زوايا مستديرة */
+    font-family: monospace; /* خط أحادي */
+    font-size: 85%; /* حجم أصغر */
+    color: var(--text-color);
+}
+
+/* =====================================================
+   8. الروابط Links
+===================================================== */
+a {
+    color: var(--accent-color); /* اللون الافتراضي */
+    text-decoration: none; /* إزالة التسطير */
+    transition: color 0.3s; /* تغيير اللون سلس */
+}
+a:hover {
+    color: var(--secondary-color); /* عند المرور */
+    text-decoration: underline; /* تسطير عند المرور */
+}
+
+/* =====================================================
+   9. تمييز الكلمات المفتاحية
+===================================================== */
+.highlight {
+    font-weight: 700; /* خط عريض */
+    color: var(--accent-color); /* تمييز */
+}
+
+/* =====================================================
+   10. التصميم المتجاوب Responsive
+===================================================== */
+@media (max-width: 768px) {
+    body { font-size: 16px; } /* نص أصغر على الهواتف */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    .article-container {
+        margin: 20px 5px; /* تقليل الهوامش */
+        padding: 20px; /* تقليل الحشو */
+        border-radius: 0; /* إزالة الزوايا */
+    }
+}

@@ -1,62 +1,161 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مقال تجريبي</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تجريبي - الصفحة الرئيسية</title>
+    
+    <!-- وصف SEO -->
+    <meta name="description" content="موقع تجريبي لعرض صفحة HTML كاملة جاهزة مع CSS مدمج، يدعم اللغة العربية والـRTL.">
+    
+    <!-- CSS مدمج -->
+    <style>
+        /* الخطوط */
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* القائمة الرئيسية */
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* المحتوى */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* أزرار */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* استجابة الموبايل */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="article-container">
-    <h1></h1>
-    <p></p>
+    <!-- الهيدر -->
+    <header>
+        <h1>مرحبًا بكم في موقعي</h1>
+    </header>
 
-    <h2></h2>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <!-- القائمة الرئيسية -->
+    <nav>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">عن الموقع</a></li>
+            <li><a href="#">خدماتنا</a></li>
+            <li><a href="#">تواصل معنا</a></li>
+        </ul>
+    </nav>
 
-    <h3></h3>
-    <p></p>
+    <!-- المحتوى الرئيسي -->
+    <main>
+        <section>
+            <h2>مقدمة</h2>
+            <p>هذا مثال على صفحة HTML جاهزة للصق مباشرة في index.html مع تنسيق CSS مدمج. يمكنك تعديل النصوص والألوان والصور حسب احتياجاتك.</p>
+            <a href="#" class="btn">المزيد</a>
+        </section>
 
-    <blockquote></blockquote>
+        <section>
+            <h2>خدماتنا</h2>
+            <p>نقدم حلولاً تقنية متكاملة للمواقع الإلكترونية، التصميم، وتطوير التطبيقات لتلبية جميع احتياجاتك الرقمية.</p>
+            <a href="#" class="btn">استكشف خدماتنا</a>
+        </section>
 
-    <h2></h2>
-    <p><code></code></p>
-    <pre><code></code></pre>
+        <section>
+            <h2>تواصل معنا</h2>
+            <p>يمكنك مراسلتنا عبر البريد الإلكتروني أو الهاتف للحصول على الدعم والمساعدة في أي وقت.</p>
+            <a href="#" class="btn">اتصل بنا</a>
+        </section>
+    </main>
 
-    <h2></h2>
-    <table>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <h2></h2>
-    <div class="faq-item">
-      <h4></h4>
-      <p></p>
-    </div>
-    <div class="faq-item">
-      <h4></h4>
-      <p></p>
-    </div>
-  </div>
+    <!-- الفوتر -->
+    <footer>
+        &copy; 2025 جميع الحقوق محفوظة
+    </footer>
 
 </body>
 </html>
